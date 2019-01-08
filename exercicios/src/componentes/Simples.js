@@ -1,5 +1,6 @@
 import React from 'react'; //Sempre que vamos usar o JSX o react deve estar presente dentro do import
 import { Text, View } from 'react-native';
+import Padrao from '../estilo/Padrao';
 
 //Duas maneiras de se declarar o export: Comum
 //export default function (props) { 
@@ -13,7 +14,9 @@ import { Text, View } from 'react-native';
 export default props => { //É aconselhavel caso utlize parametro, chamar de PROPS utilizado para acessar as propriedades fora do componente
     //Quando utilizado o parametro, ele virá em forma de objeto, tendo que acessa-lo da seguinte forma dentro da tag: <Text>{props.nome_var}</Text>
     //return <Text>{props.texto}</Text> 
-    return <Text>Arrow: Simples! {props.texto}</Text> //Pode se utilizar interpolação entre o texto
+
+    //Sobre o estilo, caso utilizemos DENTRO DE ARRAY,poderemos utilizar varias paginas de estilo de uma vez, separadas por virgula - De forma comum, basta tirar os colchetes
+    return <Text style={[Padrao.ex]}>Arrow: Simples! {props.texto}</Text> //Pode se utilizar interpolação entre o texto
 }
 
 //Função com return implicita, o mesmo do de cima, porém desta forma nao deixa utilizar mais de 1 componente (varios textos etc), tendo que encapsula-los como abaixo
